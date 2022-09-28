@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  
+  web:
+    
+    build:  ./logic/web/
+    command: python manager.py run -h 0.0.0.0
+    volumes:
+      - ./logic/web/:/usr/src/app/
+    ports:
+      - 5000:5000
+    environment:
+      ./.myenv.dev  
